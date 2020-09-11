@@ -1,0 +1,21 @@
+
+<div class="align-center" style="padding-bottom: 1rem;">
+  <h2>My Sample Entries</h2>
+  <button mat-raised-button (click)="openDialog()">Add New</button>
+</div>
+<mat-grid-list cols="2" rowHeight="1:1">
+  <mat-grid-tile [colspan]="selectedEntry ? '1' : '2'" rowspan="1" >
+    <ul class="entries">
+      <li *ngFor="let entry of entries" (click)="onSelect(entry)" [class.selected]="entry === selectedEntry">
+        <span class="badge">{{entry.id}}</span> {{entry.name}}
+      </li>
+    </ul>
+  </mat-grid-tile>
+  <div *ngIf="selectedEntry">
+    <mat-grid-tile colspan="1" rowspan="1">
+      <app-entry-detail [entry]="selectedEntry"></app-entry-detail>
+    </mat-grid-tile>
+  </div>
+</mat-grid-list>
+
+<!-- <app-messages></app-messages> -->

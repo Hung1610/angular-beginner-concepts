@@ -1,0 +1,7 @@
+<div mat-dialog-content>
+    <h2>New Entry</h2>
+    <app-entry-editor (saveItemEvent)="addEntry($event)"></app-entry-editor>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onSubmit()">Add</button>
+</div>

@@ -1,0 +1,16 @@
+<div>
+    <form *ngIf="editorForm" [formGroup]="editorForm" (ngSubmit)="onSubmit()" appEntryAsyncValidator>
+        <mat-form-field appearance="standard">
+            <mat-label>Name</mat-label>
+            <input matInput placeholder="name" name="name" formControlName="name">
+        </mat-form-field>
+        
+        <div class="invalid-feedback" *ngIf="(editorForm.get('name').dirty || editorForm.get('name').touched) && editorForm.errors?.uniqueName">
+            Name must be unique
+        </div>
+        
+        <div class="invalid-feedback" *ngIf="(editorForm.get('name').dirty || editorForm.get('name').touched) && editorForm.get('name').hasError('required')">
+            Name is required
+        </div>
+    </form>
+</div>
