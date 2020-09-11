@@ -1,4 +1,4 @@
-# MyApp
+# Angular Beginner Demo
 
 This project's purpose is to serve as a quick demo for learning Angular Concepts.  
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.0.
